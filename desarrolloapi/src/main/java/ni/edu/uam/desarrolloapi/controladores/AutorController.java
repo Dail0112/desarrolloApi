@@ -24,12 +24,17 @@ public class AutorController {
     }
 
     @GetMapping("/{id}")
-    public  Autor getAutorById(@RequestBody Long id) {
+    public Autor getAutorById(@PathVariable Long id) {
         return autorServicio.getAutorById(id);
     }
 
-    @PostMapping("/{id}")
-    public Autor saveAutor(@PathVariable Autor autor) {
+    @PostMapping
+    public Autor saveAutor(@RequestBody Autor autor) {
+        return autorServicio.saveAutor(autor);
+    }
+
+    @PutMapping("/{id}")
+    public Autor updateAutor(@PathVariable Long id, @RequestBody Autor autor) {
         return autorServicio.saveAutor(autor);
     }
 

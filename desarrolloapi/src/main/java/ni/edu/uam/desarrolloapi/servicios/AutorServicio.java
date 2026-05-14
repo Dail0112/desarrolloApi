@@ -27,6 +27,10 @@ public class AutorServicio {
     public Autor saveAutor(Autor autor  ) {
         return autorRepo.save(autor);
     }
+    public Autor updateAutor(Autor autor) {
+        return autorRepo.save(autor);
+    }
+
     public void deleteAutorById(Long id) {
         autorRepo.deleteById(id);
     }

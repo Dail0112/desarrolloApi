@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class LibroServicio {
-    private LibroRepo libroRepo;
+    private final LibroRepo libroRepo;
     public LibroServicio(LibroRepo libroRepo) {
         this.libroRepo = libroRepo;
     }
@@ -21,6 +21,9 @@ public class LibroServicio {
     }
 
     public Libro saveLibro(Libro libro) {
+        return libroRepo.save(libro);
+    }
+    public Libro updateLibro(Libro libro) {
         return libroRepo.save(libro);
     }
 
